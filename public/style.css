@@ -1,0 +1,49 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll Bar */
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #858574;
+  border-radius: 5px;
+  visibility: var(--hide-scrollbar);  /*make into fadeout animation*/
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 5000px;
+
+  background-image: url("nasaImg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* background-size: 53%; */
+  background-position: center;
+  background-color: #000000;
+}
+
+#worm {
+  position: fixed; /* make sure it stays put so we can see it! */
+  transform: scale(0%);
+
+  animation: scale 1s linear forwards;
+  animation-play-state: paused;
+  animation-delay: calc(var(--scroll) * -1s);
+}
+
+@keyframes scale {
+  to {
+    /* transform: rotate(360deg); */
+    transform: scale(100%)
+  }
+}
